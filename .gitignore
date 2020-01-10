@@ -1,12 +1,16 @@
+# White List 
+Unbound\ Reality/Assets/Photon/**
+!Unbound\ Reality/Assets/Photon/**/
+# !Unbound\ Reality/Assets/Photon/*.meta
+!Unbound\ Reality/Assets/Photon/**/*.meta
+
+# Black List 
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
-Art Assets/
-Photon/
-Tomestone.fbx
 
 # Visual Studio cache directory
 .vs/
@@ -30,7 +34,6 @@ ExportedObj/
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
-Photon.meta
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
