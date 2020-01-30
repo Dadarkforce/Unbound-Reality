@@ -19,6 +19,8 @@ public class NonVRCharacterController : MonoBehaviourPun, IPunObservable
     [Tooltip("The Health UI GO containing the scrollbar for health")]
     [SerializeField]
     private GameObject healthUIObject;
+    [SerializeField]
+    private GameObject inventoryUI;
 
     public Score score;
     public Vector3 pig_pos;
@@ -57,6 +59,8 @@ public class NonVRCharacterController : MonoBehaviourPun, IPunObservable
         healthUIObject = GameObject.Find("Health Slider");
         HealthUI healthUI = healthUIObject.GetComponent<HealthUI>();
         healthUI.player = this;
+        inventoryUI = GameObject.Find("Inventory");
+        inventoryUI.SetActive(false);
 
         //transform.GetChild(0).gameObject.SetActive(false);
         rbody = gameObject.GetComponent<Rigidbody>();
@@ -94,11 +98,15 @@ public class NonVRCharacterController : MonoBehaviourPun, IPunObservable
             this.GetComponent<Collider>().enabled = true;
             this.GetComponentInChildren<Camera>().enabled = true;
         }
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rbody.velocity = new Vector3(0,1,0) * jumpheightMultiplier;
             isGrounded = false;
         } 
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            inventoryUI.SetActive(!inventoryUI.activeSelf);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

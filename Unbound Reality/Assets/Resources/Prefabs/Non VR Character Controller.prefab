@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthUIObject: {fileID: 0}
+  inventoryUI: {fileID: 0}
   score: {fileID: 0}
   pig_pos: {x: 0, y: 0, z: 0}
   health: 100
